@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #00272b;
+  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button,
+input {
+  font-family: 'Nunito', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.lp-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.05rem;
+  min-width: 100vw;
+  min-height: 85vh;
+  padding: 2rem;
+}
+
+.lp-sub {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  letter-spacing: 0.05rem;
 }
 
-.App-link {
-  color: #61dafb;
+.lp-title {
+  font-size: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.lp-subtitle {
+  font-size: 1.25rem;
+}
+
+.lp-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-input {
+  background-color: #003e45;
+  outline: 0px;
+  border: 0px;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: rgb(121, 184, 255);
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.lp-input::placeholder {
+  color: rgb(121, 184, 255);
+  letter-spacing: 0.05rem;
+}
+
+.lp-submit {
+  width: 200px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0px;
+  outline: 0px;
+  letter-spacing: 0.05rem;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: #076470;
+  color: #ffffff;
 }
