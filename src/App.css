@@ -8,7 +8,7 @@ body {
   background-color: #00272b;
   font-family: 'Nunito', sans-serif;
   color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 button,
