@@ -20,16 +20,6 @@ const UserDetails = () => {
     hireable,
   } = userInfo;
 
-  const {
-    name: reponame,
-    html_url: repourl,
-    description,
-    size,
-    stargazers_count,
-    forks,
-    license,
-  } = userRepos;
-
   useEffect(() => {
     fetch(`https://api.github.com/users/${id}`)
       .then((response) => response.json())
