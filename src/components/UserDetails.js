@@ -35,7 +35,6 @@ const UserDetails = () => {
 
   return (
     <section className="user-card">
-      <h1>Go back to hom</h1>
       <img className="user-image" src={avatar_url} alt={name}></img>
       <h1 className="user-name">{name}</h1>
       <a href={html_url}>
