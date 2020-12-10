@@ -17,7 +17,6 @@ const UserDetails = () => {
     followers,
     following,
     created_at,
-    hireable,
   } = userInfo;
 
   useEffect(() => {
@@ -35,32 +34,31 @@ const UserDetails = () => {
   }, []);
 
   return (
-    <div>
-      <img src={avatar_url} alt={name}></img>
-      <h1>{name}</h1>
-      <h1>@{login}</h1>
-      <h1>Joined Github on {created_at}</h1>
-      <div>
-        <h1>{public_repos}</h1>
-        <h1>{followers}</h1>
-        <h1>{following}</h1>
-        <h1>{hireable ? <h1>Looking for work!</h1> : ''}</h1>
+    <section>
+      <img className='user-image' src={avatar_url} alt={name}></img>
+      <h1 className='user-name'>{name}</h1>
+      <h1 className='user-login'>@{login}</h1>
+      <h1 className='user-joined'>Joined Github on {created_at}</h1>
+      <div className='user-stats'>
+        <h1 className='user-repos'>{public_repos}</h1>
+        <h1 className='user-followers'>{followers}</h1>
+        <h1 className='user-following'>{following}</h1>
       </div>
-      <div>
+      <div className='user-repo-list'>
         {userRepos.map((repo) => {
           return (
-            <div style={{ margin: '4rem 0' }}>
-              <h1>{repo.name}</h1>
-              <h1>{repo.description}</h1>
-              <h1>{repo.language}</h1>
-              <h1>{repo.stargazers_count}</h1>
-              <h1>{repo.forks}</h1>
-              <h1>{repo.size} KB</h1>
+            <div className='user-repo-card' style={{ margin: '4rem 0' }}>
+              <h1 className='user-repo-name'>{repo.name}</h1>
+              <h1 className='user-repo-description'>{repo.description}</h1>
+              <h1 className='user-repo-language'>{repo.language}</h1>
+              <h1 className='user-repo-stars'>{repo.stargazers_count}</h1>
+              <h1 className='user-repo-forks'>{repo.forks}</h1>
+              <h1 className='user-repo-size'>{repo.size} KB</h1>
             </div>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 

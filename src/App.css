@@ -61,6 +61,15 @@ input {
   text-align: center;
 }
 
+.error {
+  border: 2px solid #db0d0d;
+}
+
+.error-text {
+  margin-top: 1.25rem;
+  opacity: 0;
+}
+
 .lp-input::placeholder {
   color: rgb(121, 184, 255);
   letter-spacing: 0.05rem;
