@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { AiOutlineFork, AiFillStar } from 'react-icons/ai';
 
 const UserDetails = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -16,7 +17,6 @@ const UserDetails = () => {
     public_repos,
     followers,
     following,
-    created_at,
   } = userInfo;
 
   useEffect(() => {
@@ -34,27 +34,38 @@ const UserDetails = () => {
   }, []);
 
   return (
-    <section>
-      <img className='user-image' src={avatar_url} alt={name}></img>
-      <h1 className='user-name'>{name}</h1>
-      <h1 className='user-login'>@{login}</h1>
-      <h1 className='user-joined'>Joined Github on {created_at}</h1>
-      <div className='user-stats'>
-        <h1 className='user-repos'>{public_repos}</h1>
-        <h1 className='user-followers'>{followers}</h1>
-        <h1 className='user-following'>{following}</h1>
+    <section className="user-card">
+      <h1>Go back to hom</h1>
+      <img className="user-image" src={avatar_url} alt={name}></img>
+      <h1 className="user-name">{name}</h1>
+      <a href={html_url}>
+        <h1 className="user-login">@{login}</h1>
+      </a>
+      <div className="user-stats">
+        <h1 className="user-repos">{public_repos} Repositories</h1>
+        <h1 className="user-followers">{followers} Followers</h1>
+        <h1 className="user-following">{following} Following</h1>
       </div>
-      <div className='user-repo-list'>
+      <div className="user-repo-list">
         {userRepos.map((repo) => {
           return (
-            <div className='user-repo-card' style={{ margin: '4rem 0' }}>
-              <h1 className='user-repo-name'>{repo.name}</h1>
-              <h1 className='user-repo-description'>{repo.description}</h1>
-              <h1 className='user-repo-language'>{repo.language}</h1>
-              <h1 className='user-repo-stars'>{repo.stargazers_count}</h1>
-              <h1 className='user-repo-forks'>{repo.forks}</h1>
-              <h1 className='user-repo-size'>{repo.size} KB</h1>
-            </div>
+            <a href={repo.html_url}>
+              <div className="user-repo-card">
+                <h1 className="user-repo-name">{repo.name}</h1>
+                <h1 className="user-repo-description">{repo.description}</h1>
+                <div className="user-repo-stats">
+                  <h1 className="user-repo-stars">
+                    <AiFillStar />
+                    {repo.stargazers_count}
+                  </h1>
+                  <h1 className="user-repo-forks">
+                    <AiOutlineFork />
+                    {repo.forks}
+                  </h1>
+                  <h1 className="user-repo-size">{repo.size} KB</h1>
+                </div>
+              </div>
+            </a>
           );
         })}
       </div>

@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
+}
+
 body {
   background-color: #00272b;
   font-family: 'Nunito', sans-serif;
@@ -86,4 +92,123 @@ input {
   cursor: pointer;
   background-color: #076470;
   color: #ffffff;
+}
+
+.user-card {
+  text-align: center;
+}
+
+.user-image {
+  border-radius: 50%;
+  height: 200px;
+  border: 3px solid #087f8c;
+  margin-top: 1rem;
+}
+
+.user-name {
+  font-size: 3.5rem;
+}
+
+.user-login {
+  font-size: 2.25rem;
+  margin: 0.5rem 0;
+}
+
+.user-stats {
+  display: flex;
+  margin: 0.5rem;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.user-repos,
+.user-followers,
+.user-following {
+  margin: 1rem 2rem;
+}
+
+.user-repo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+  column-gap: 5px;
+  max-width: 1368px;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.user-repo-card {
+  text-align: center;
+  background: #003e45;
+  border-radius: 0.25rem;
+  padding: 2rem 2rem 0 2rem;
+  margin: 2rem;
+}
+
+.user-repo-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem;
+  font-size: 14px;
+}
+
+.user-repo-name {
+  margin: 1rem auto;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 275px;
+  text-overflow: ellipsis;
+}
+
+.user-repo-description {
+  margin: 1rem;
+  font-size: 18px;
+  font-weight: 400;
+  height: 150px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 810px) {
+  .user-repo-description {
+    width: 400px;
+  }
+
+  .user-card {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .user-repo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    column-gap: 5px;
+    max-width: 1368px;
+  }
+
+  .user-stats {
+    padding: 0;
+    margin: 0;
+  }
+
+  .user-repo-description {
+    width: 225px;
+  }
+
+  .user-name {
+    font-size: 2rem;
+  }
+
+  .user-login {
+    font-size: 1.25rem;
+  }
+
+  .user-repos,
+  .user-followers,
+  .user-following {
+    font-size: 0.8rem;
+    margin: 0.5rem 0.75rem;
+  }
 }
